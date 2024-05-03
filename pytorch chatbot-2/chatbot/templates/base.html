@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+</head>
+
+<body>
+    <div>
+        <a style="position: absolute;font-weight:700 ; font-size: 20px; text-decoration: none; color: #fff; background-color: black; border-radius: 25px; padding: 10px; margin: 20px;"
+            href="http://127.0.0.1:8000/">
+            < Back</a>
+    </div>
+    <div class="container">
+
+        <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div style="height: 50px; background-color: #fff; border-radius: 50%;"
+                        class="chatbox__image--header">
+                        <img style="height: 50px;" src="../static/images/robot.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">BloodBot</h4>
+                        <p class="chatbox__description--header">Hi. My name is BloodBot. How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+            <!-- <div class="chatbox__button">
+                <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root | tojson | safe }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
